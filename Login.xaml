@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Onlykitchen.Login"
+             Title="Onlykitchen">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+            <Frame CornerRadius="85" HeightRequest="150" WidthRequest="150" HorizontalOptions="CenterAndExpand" Padding="0.1" BackgroundColor="Transparent">
+                <Image x:Name="ProfileImage" Source="https://img.freepik.com/vector-premium/icono-plano-vectorial-hombre-gafas-icono-vectorial-circular_176841-4665.jpg" Aspect="AspectFill" />
+            </Frame>
+            
+            <Label Text="Inicio de Sesión" FontSize="24" HorizontalOptions="CenterAndExpand" />
+
+            <Entry x:Name="UsernameEntry" Placeholder="Nombre de Usuario" />
+            <Entry x:Name="PasswordEntry" Placeholder="Contraseña" IsPassword="True" />
+
+            <Button Text="Iniciar Sesión" Clicked="LoginButton_Clicked" VerticalOptions="EndAndExpand" />
+            <Button Text="Registrarme" Clicked="RegistrarmeButton_Clicked" VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

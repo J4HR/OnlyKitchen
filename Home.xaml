@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Onlykitchen.Home"
+             Title="Onlykitchen">
+    <ContentPage.Content>
+        <Grid>
+            <!-- Barra lateral -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="98" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" BackgroundColor="Gray" Padding="4">
+                <Button Text="Perfil" Clicked="PerfilButton_Clicked" />
+                <Button Text="Amigos" Clicked="AmigosButton_Clicked" />
+                <Button Text="Recetas" Clicked="RecetasButton_Clicked" />
+                <Button Text="Mis Recetas" Clicked="MisRecetasButton_Clicked" />
+                <Button Text="Recomendados" Clicked="RecomendadosButton_Clicked" />
+            </StackLayout>
+
+            <!-- Tabla de recetas por día -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" BackgroundColor="Transparent" Padding="10">
+                    <Label Text="Organizador Semanal de Recetas" FontSize="24" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+                    <!-- Tabla para organizar las recetas -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Días de la semana -->
+                    <Label Text="L" FontSize="14" HorizontalOptions="Center" Grid.Column="0" />
+                    <Label Text="Ma" FontSize="14" HorizontalOptions="Center" Grid.Column="1" />
+                    <Label Text="Mi" FontSize="14" HorizontalOptions="Center" Grid.Column="2" />
+                    <Label Text="J" FontSize="14" HorizontalOptions="Center" Grid.Column="3" />
+                    <Label Text="V" FontSize="14" HorizontalOptions="Center" Grid.Column="4" />
+                    <Label Text="S" FontSize="14" HorizontalOptions="Center" Grid.Column="5" />
+                    <Label Text="D" FontSize="14" HorizontalOptions="Center" Grid.Column="6" />
+
+                    <!-- Celdas para las recetas -->
+                    <!-- Aquí deberías agregar tus elementos de interfaz para las recetas de cada día -->
+                </Grid>
+                <StackLayout Grid.Row="12" BackgroundColor="Transparent" Padding="10">
+                    <Label Text="Bienbenido UwU" FontSize="20" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Grid>
+            
+        </Grid>
+
+        
+    </ContentPage.Content>
+</ContentPage>
