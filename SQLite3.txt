@@ -1,0 +1,35 @@
+-- Creación de la tabla de usuarios
+CREATE TABLE Users (
+    UserID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username TEXT NOT NULL,
+    Password TEXT NOT NULL,
+    Email TEXT NOT NULL
+);
+
+-- Creación de la tabla de amigos
+CREATE TABLE Friends (
+    FriendshipID INTEGER PRIMARY KEY AUTOINCREMENT,
+    UserID INTEGER NOT NULL,
+    FriendUserID INTEGER NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (FriendUserID) REFERENCES Users(UserID)
+);
+
+-- Creación de la tabla de recetas propias
+CREATE TABLE MyRecipes (
+    RecipeID INTEGER PRIMARY KEY AUTOINCREMENT,
+    UserID INTEGER NOT NULL,
+    Title TEXT NOT NULL,
+    Description TEXT,
+    Instructions TEXT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+
+-- Creación de la tabla de recetas favoritas
+CREATE TABLE FavoriteRecipes (
+    FavoriteID INTEGER PRIMARY KEY AUTOINCREMENT,
+    UserID INTEGER NOT NULL,
+    RecipeID INTEGER NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (RecipeID) REFERENCES MyRecipes(RecipeID)
+);
